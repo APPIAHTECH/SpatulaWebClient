@@ -1,1 +1,148 @@
 /* You can add global styles to this file, and also import other style files */
+@import "https://necolas.github.io/normalize.css/7.0.0/normalize.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700');
+
+body {
+    background:#e8e8e8;
+    font-family: 'Muli';
+}
+/**{font-family: 'Roboto', sans-serif;}*/
+
+.reduce{
+  opacity: .8;
+}
+.white{
+  color: white;
+}
+.red{
+  color: #FF6161;
+}
+.center{
+  text-align: center;
+  padding: 10px;
+}
+
+.alert , .succes{
+  width: 50%;
+  height: 20px;
+  text-align: center;
+  padding: 0;
+  background: #FF6161;
+  margin-left: 47.5%;
+  margin-bottom: 20px;
+  padding: 5px;
+  padding-left: 0;
+  padding-right: 0;
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
+  animation-name: alertAnimation;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+.alert p{padding: 0; margin: 0; color: white; font-size: 12pt;}
+
+.succes{background: #1EAEDB;}
+@keyframes alertAnimation {
+  0%{
+    top: -50px;
+    opacity: 0;
+  }
+  100%{
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+.notification-alert-red ,
+.notification-alert-green,
+.notification-alert-orange,
+.notification-alert-blue
+{
+  background-color: #FF6161;
+  padding: 20px;
+  color: white;
+  margin-bottom: 15px;
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+.notification-alert-green{
+  background-color: #1DCE79;
+}
+.notification-alert-orange{background-color: #FFAA2C;}
+.notification-alert-blue{background-color: #47A8F5;}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+div.notificationContainer{
+  width: 90%;
+  height: 90%;
+  margin: 20px auto;
+}
+
+div.register-form-container{
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: auto;
+  background: #FFFFFF;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding-bottom: 10px;
+}
+
+
+div.form-header{
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #FF6161;
+  text-align: center;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+div.form-body{
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+  background: #FFFFFF;
+  border-radius: 5px;
+}
+
+input{
+  width: 90%;
+  padding: 15px;
+  display: block;
+  border: solid 1px #9BB1C5;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+input[type=submit]{
+  padding: 25px;
+  background: #1DCE79;
+  color: white;
+  border-radius: 2px;
+  font-size: 12pt;
+  font-weight: bolder;
+  margin-top: 15px;
+}
+
+input[type=submit]:hover{cursor: pointer;}

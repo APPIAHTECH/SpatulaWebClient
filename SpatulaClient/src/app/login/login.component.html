@@ -1,3 +1,18 @@
-<p>
-  login works!
-</p>
+<form method="post" (submit)="loginUser($event)">
+  <div class="register-form-container">
+    <div class="form-header"></div>
+    <div class="form-body">
+      <div class="notificationContainer" #target [innerHtml]="html"></div>
+      <input type="email" name="email" placeholder="email *" [(ngModel)]="user.email" (keyup)="showAlertEmail = false">
+      <div class="alert" *ngIf="showAlertEmail"><p>{{alertMessage}}</p></div>
+
+      <h6 class="reduce" style="margin-left:20px;">Forgotten Password ? <a href="/resetpassword" class="red">Restor password</a></h6>
+      <input type="password" name="password" placeholder="password *" [(ngModel)]="user.password" (keyup)="showAlertPassword = false">
+      <div class="alert" *ngIf="showAlertPassword"><p>{{alertMessage}}</p></div>
+
+      <input type="submit" name="submit" value="Login">
+    </div>
+    <h5 class="reduce center">Don't have an account? <a href="/singup" class="red">Create Account</a></h5>
+  </div>
+
+</form>

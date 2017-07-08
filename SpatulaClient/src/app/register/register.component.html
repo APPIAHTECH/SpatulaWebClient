@@ -1,3 +1,20 @@
-<p>
-  register works!
-</p>
+<form method="post" (submit)="singupUser($event)">
+  <div class="register-form-container">
+    <div class="form-header"></div>
+    <div class="form-body">
+      <div class="notificationContainer" #target [innerHtml]="html"></div>
+      <input type="text" name="username" placeholder="username *" [(ngModel)]="user.username" autofocus (keyup)="showAlertUsername = false">
+      <div class="alert" *ngIf="showAlertUsername"><p>{{alertMessage}}</p></div>
+
+      <input type="email" name="email" placeholder="email *" [(ngModel)]="user.email" (keyup)="showAlertEmail = false">
+      <div class="alert" *ngIf="showAlertEmail"><p>{{alertMessage}}</p></div>
+
+      <input type="password" name="password" placeholder="password *" [(ngModel)]="user.password" (keyup)="showAlertPassword = false">
+      <div class="alert" *ngIf="showAlertPassword"><p>{{alertMessage}}</p></div>
+
+      <input type="submit" name="submit" value="SIGN UP">
+    </div>
+    <h5 class="reduce center">Already have an account? <a href="/login" class="red">Login</a></h5>
+  </div>
+
+</form>

@@ -3,41 +3,32 @@ import {User} from './../model/User.model';
 import { HelperService} from './../shared/helper.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-resetpassword',
+  templateUrl: './resetpassword.component.html',
+  styleUrls: ['./resetpassword.component.css']
 })
-export class LoginComponent implements OnInit {
+export class ResetpasswordComponent implements OnInit {
+
   private showAlertEmail : boolean;
-  private showAlertPassword : boolean;
   private alertMessage : string;
   private html :string = "";
 
   constructor(private user:User , private helperService : HelperService) {
-
     this.showAlertEmail = false;
-    this.showAlertPassword = false;
     this.alertMessage = "this field is required";
   }
 
   ngOnInit() {
   }
 
-  loginUser() {
+  resetPassword(event:any){
     event.preventDefault();
     if(this.valid()){
-      this.user.login(this.user ,(response , error)=>{
-        if(error){
+      this.user.resetPassword(this.user , (response , error)=>{
+        if(error)
           this.html = this.helperService.notify("danger" , "Someting went wrong with the proces , please try it again");
-          return;
-        }
-
-          if(response.find && response.passwordMathed){
-            localStorage.setItem('tokenAcces' , response.tokenAcces);
-            this.helperService.redirectTo('/home');
-          }else
-            this.html = this.helperService.notify("info" , "Bad credentials , make sure username and password are correct");
-
+          if(response.toVerifyPasswordRestor)
+            this.html = this.helperService.notify("success" , "Mail has been succesfull send , please confirm changes");
       });
     }
   }
@@ -47,11 +38,6 @@ export class LoginComponent implements OnInit {
       this.showAlertEmail = true;
       this.alertMessage = "This Filed Is Required";
       return false;
-    }else if(this.user.getPassword().length <= 0 || this.user.getPassword() === ""){
-      this.showAlertPassword = true;
-      this.alertMessage = "This Filed Is Required";
-      return false;
-
     }else if(!HelperService.isValidEmail(this.user.getEmail())){
       this.showAlertEmail = true;
       this.alertMessage = "Enter a valid email address";
