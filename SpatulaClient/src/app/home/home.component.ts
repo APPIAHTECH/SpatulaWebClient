@@ -17,10 +17,10 @@ export class HomeComponent implements OnInit {
     this.userAccesToken = helperService.getLocalStorageUserToken();
     if(this.userAccesToken){
       this.canRender = true;
-      this.request.authToken = this.userAccesToken;
-      this.user.getData(this.userAccesToken);
+      this.user.setaAccesToken(this.userAccesToken);
+      this.user.getData();
     }
-    
+
   }
 
   ngOnInit() { }

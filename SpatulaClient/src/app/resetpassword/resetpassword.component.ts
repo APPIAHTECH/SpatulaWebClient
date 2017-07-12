@@ -27,8 +27,10 @@ export class ResetpasswordComponent implements OnInit {
       this.user.resetPassword(this.user , (response , error)=>{
         if(error)
           this.html = this.helperService.notify("danger" , "Someting went wrong with the proces , please try it again");
-          if(response.toVerifyPasswordRestor)
-            this.html = this.helperService.notify("success" , "Mail has been succesfull send , please confirm changes");
+          if(!response.find)
+            this.html = this.helperService.notify("warning" , "This email address dosent exist");
+          else if(response.toVerifyPasswordRestor)
+            this.html = this.helperService.notify("success" , "We have send you a confirmation key");
       });
     }
   }

@@ -35,8 +35,12 @@ export class LoginComponent implements OnInit {
           if(response.find && response.passwordMathed){
             localStorage.setItem('tokenAcces' , response.tokenAcces);
             this.helperService.redirectTo('/home');
-          }else
+          }else if(response.find === false){
+            this.html = this.helperService.notify("warning" , "Cant find user, please singup to create an account ");
+          }else if (response.passwordMathed === false){
             this.html = this.helperService.notify("info" , "Bad credentials , make sure username and password are correct");
+          }
+
 
       });
     }

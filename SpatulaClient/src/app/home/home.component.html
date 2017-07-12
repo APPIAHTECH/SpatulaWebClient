@@ -1,1 +1,8 @@
-<h1 *ngIf="canRender">Home , Hello welcome {{user.getUsername()}}</h1>
+<div class="homeContainer" *ngIf="canRender">
+  <app-header></app-header>
+
+  <div class="homeBody">
+    <h1 >Home , Hello welcome {{user.getUsername()}}</h1>
+  </div>
+
+</div>

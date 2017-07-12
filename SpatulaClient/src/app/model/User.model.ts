@@ -16,6 +16,7 @@ export class User{
   public createdAt:Date;
   public updatedAt:Date;
   public restorPasswordToken : string;
+  public accesToken:string;
 
   private userAuthUrlSingup = 'http://localhost:3000/api/auth/singup';
   private userAuthUrlLogin = 'http://localhost:3000/api/auth/login';
@@ -36,6 +37,10 @@ export class User{
   public setProfileImg(img:string){this.profileImg = img}
   public setPassword(pass:string){this.password = pass}
   public setPasswordTwo(pass:string){this.passwordTwo = pass}
+  public setaAccesToken(token:string){
+    this.accesToken = token;
+    this.request.setToken(this.accesToken);
+  }
 
   public setRestorPasswordToken(token:string){this.restorPasswordToken = token}
 
@@ -48,6 +53,7 @@ export class User{
   public getValidatedAccount(){return this.validatedAccount}
   public getCreatedAt(){return this.createdAt}
   public getUpdatedAt(){return this.updatedAt}
+  public getAccesToken(){return this.accesToken}
 
   public login(user:this , callback):void{
 
@@ -74,7 +80,7 @@ export class User{
       .subscribe( (response) => {callback(response , null)} , (error)=> {callback(null , error)});
   }
 
-  public getData(token){
+  public getData(){
     this.request.get(this.userDataUrl , true)
       .subscribe(response =>{
         this.setEmail(response.userData.email);
