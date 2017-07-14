@@ -15,11 +15,14 @@ export class HomeComponent implements OnInit {
 
   constructor(private user:User , private request:UserDataService , private helperService : HelperService) {
     this.userAccesToken = helperService.getLocalStorageUserToken();
-    if(this.userAccesToken){
+    if(!this.userAccesToken){
       this.canRender = true;
       this.user.setaAccesToken(this.userAccesToken);
       this.user.getData();
     }
+
+    //Note:: remove
+    this.canRender = true;
 
   }
 
