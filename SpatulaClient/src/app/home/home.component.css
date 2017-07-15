@@ -4,7 +4,117 @@ div.homeContainer{
   background: #F4F7FA;
 }
 
-.homeBody{
+div.view-container div.header{
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+div.header div.section{
+  width: 25%;
+  height: auto;
+  padding-top: 40px;
+  padding-left: 50px;
+  padding-bottom: 29.21px;
+  padding-right: 0;
+  background: #00BCD4;
+  box-shadow: 0px 5px 0px #F1F1F1F1;
+}
+
+#aline{
+  margin-left: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+div.recipies-containers{
+  width: 95%;
+  height: 82%;
+  padding: 20px;
+  padding-bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  overflow-y: auto;
+  background:#f4f4f4;
+}
+
+div.recipie-container{
+  width: 300px;
+  height: 350px;
+  background: #FFFFFF;
+  box-shadow: 5px 5px 5px #CFD8DC;
+  margin: 10px;
+}
+
+div.recipie-info{
+  width: auto;
+  padding: 20px;
+}
+div.recipie-img{
+  width: 100%;
+  height: 50%;
+  transition: all ease-in-out .2s;
+  background-image: url('http://wallpapersdsc.net/wp-content/uploads/2016/09/Food-Images.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+div#proimg{
+  width: 20px;
+  height: 20px;
+}
+
+div.recipie-info > div.head{
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+div.recipie-info div.body{
+  width: 100%;
+  height: 40%;
+  word-break: break-all;
+  font-size: 8pt;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+
+div.recipie-info div.footer{
+  width: 100%;
+  height: 25%;
+  word-break: break-all;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+h5#left{
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+.recipie-img:hover{
+  opacity: .5;
 }

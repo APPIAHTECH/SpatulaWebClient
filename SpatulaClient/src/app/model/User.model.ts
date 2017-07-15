@@ -86,6 +86,7 @@ export class User{
         this.setEmail(response.userData.email);
         this.setUserID(response.userData._id);
         this.setUsername(response.userData.username);
+        this.setProfileImg(response.userData.profileImg);
       }, error =>{console.error(error)});
   }
 

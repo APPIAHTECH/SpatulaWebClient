@@ -13,14 +13,35 @@ body {
 }
 /**{font-family: 'Roboto', sans-serif;}*/
 
+div.view-container{
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.upercase{
+  text-transform: uppercase;
+}
+.capitalize{
+  text-transform: capitalize;
+}
 .reduce{
   opacity: .8;
+}
+.cursor-pointer{
+  cursor: pointer;
 }
 .white{
   color: white;
 }
 .red{
   color: #FF6161;
+}
+
+.blue{
+  color: #2196F3;
+  font-size: bolder;
 }
 .center{
   text-align: center;
@@ -150,3 +171,15 @@ input[type=submit]{
 }
 
 input[type=submit]:hover{cursor: pointer;}
+ul , li , a{text-decoration: none; list-style: none;}
+
+.profile-img{
+  width: 50px;
+  height: 50px;
+  background-image: url('https://dcrinz9r0kxxp.cloudfront.net/wp-content/uploads/2016/09/michelle-prince-profile-img.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
